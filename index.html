@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Wealth with Vikas — AMFI Registered Mutual Fund Distributor · ARN-361792</title>
 <meta name="description" content="Wealth with Vikas — Vikas Kumar, AMFI-Registered Mutual Fund Distributor (ARN-361792) and Wealth Coach based in Amritsar. Eleven interactive financial planning calculators: SIP, retirement, PMS, SWP, EMI and more.">
 <meta name="author" content="Vikas Kumar">
@@ -35,10 +35,15 @@
   --shadow-md:0 22px 48px -32px #000;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:hidden}
+*,*::before,*::after{min-width:0}
+img,svg,canvas,video,iframe,table{max-width:100%}
+img,svg,canvas,video{height:auto}
+p,h1,h2,h3,h4,li,span,a,td,th,label,small,strong,em{overflow-wrap:break-word}
+html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{
   margin:0;font-family:var(--sans);font-weight:400;color:var(--cream);
-  background:var(--ink-0);line-height:1.6;overflow-x:hidden;
+  background:var(--ink-0);line-height:1.6;overflow-x:clip;width:100%;max-width:100%;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }
 body::before{
@@ -108,6 +113,19 @@ nav.main a.active::after{
   box-shadow:0 0 0 4px rgba(201,162,74,.08),0 10px 26px -16px #000;
 }
 @media(max-width:1080px){nav.main{display:none}}
+@media(max-width:400px){
+  .wrap{padding:0 14px}
+  .bar{gap:8px}
+  .brand{gap:8px}
+  .brand .mark{height:32px}
+  .wm{font-size:15px}
+  .me{width:32px;height:32px}
+  .hact{gap:6px;flex-wrap:wrap}
+  .btn.sm{padding:7px 10px;font-size:12px}
+  .hero h1{font-size:clamp(30px,10vw,40px)}
+  .cta{padding:26px 16px}
+  .stat .v,.stats .v{font-size:19px}
+}
 @media(max-width:760px){
   .bar{height:auto;flex-wrap:wrap;padding:12px 0 0;gap:10px}
   header.site.stuck .bar{height:auto}
@@ -148,7 +166,7 @@ nav.main a.active::after{
 .btn svg{width:15px;height:15px;flex:0 0 auto}
 
 /* ============ hero ============ */
-.hero{display:grid;grid-template-columns:1.12fr .88fr;gap:72px;align-items:center;padding:88px 0 68px}
+.hero{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:72px;align-items:center;padding:88px 0 68px}
 @media(max-width:980px){.hero{grid-template-columns:1fr;gap:34px;padding:48px 0 36px}}
 .eyebrow{
   display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;
@@ -262,7 +280,7 @@ h2.stitle{font-family:var(--serif);font-size:clamp(29px,3.8vw,44px);line-height:
 
 /* ============ calculator ============ */
 .calcpanel{
-  display:grid;grid-template-columns:322px 1fr;gap:0;
+  display:grid;grid-template-columns:minmax(0,322px) minmax(0,1fr);gap:0;
   background:linear-gradient(168deg,rgba(15,24,38,.94),rgba(7,12,20,.96));
   border:1px solid var(--line);border-radius:20px;overflow:hidden;
   box-shadow:var(--shadow-lg),inset 0 1px 0 rgba(255,255,255,.04);
@@ -290,7 +308,7 @@ h2.stitle{font-family:var(--serif);font-size:clamp(29px,3.8vw,44px);line-height:
 .rhead{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px}
 .calcname{font-family:var(--serif);font-size:25px;line-height:1.15;margin-bottom:5px;letter-spacing:-.01em}
 .calcblurb{font-size:13px;font-weight:300;color:var(--dim);line-height:1.55;max-width:52ch}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:20px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-bottom:20px}
 .stat{
   border:1px solid var(--line-2);border-radius:11px;padding:13px 15px;
   background:linear-gradient(180deg,rgba(255,255,255,.032),rgba(255,255,255,.006));
@@ -346,7 +364,7 @@ h2.stitle{font-family:var(--serif);font-size:clamp(29px,3.8vw,44px);line-height:
 .tt-row b{margin-left:auto;font-family:var(--mono);font-weight:400;color:var(--cream);padding-left:12px}
 
 /* ============ profile ============ */
-.pgrid{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:start}
+.pgrid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:44px;align-items:start}
 @media(max-width:920px){.pgrid{grid-template-columns:1fr;gap:30px}}
 .pcard{
   position:relative;border:1px solid rgba(201,162,74,.22);border-radius:20px;overflow:hidden;
@@ -370,7 +388,7 @@ h2.stitle{font-family:var(--serif);font-size:clamp(29px,3.8vw,44px);line-height:
 .bio strong{color:var(--cream);font-weight:500}
 .bio em{color:var(--gold-2);font-style:normal}
 
-.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:30px}
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:30px}
 @media(max-width:700px){.svc{grid-template-columns:1fr}}
 .sv{
   border:1px solid var(--line-2);border-radius:12px;padding:16px 16px 18px;
@@ -402,7 +420,7 @@ h2.stitle{font-family:var(--serif);font-size:clamp(29px,3.8vw,44px);line-height:
 /* ============ cta ============ */
 .cta{
   position:relative;overflow:hidden;border:1px solid rgba(201,162,74,.24);border-radius:22px;
-  padding:44px 46px;display:grid;grid-template-columns:1.12fr .88fr;gap:40px;align-items:start;
+  padding:44px 46px;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:40px;align-items:start;
   background:
     radial-gradient(700px 300px at 85% 0%,rgba(201,162,74,.12),transparent 65%),
     linear-gradient(168deg,rgba(17,26,40,.96),rgba(7,12,20,.98));
@@ -414,7 +432,7 @@ h2.stitle{font-family:var(--serif);font-size:clamp(29px,3.8vw,44px);line-height:
 .ctapitch{padding-top:26px}
 .ctapitch h2{font-family:var(--serif);font-size:clamp(28px,3.6vw,42px);line-height:1.05;letter-spacing:-.018em;margin-bottom:14px}
 .ctapitch p{font-size:15px;font-weight:300;color:var(--muted);line-height:1.7;max-width:44ch;margin-bottom:24px}
-.ctagrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ctagrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
 @media(max-width:460px){.ctagrid{grid-template-columns:1fr}}
 .ctagrid .btn{justify-content:flex-start;padding:13px 15px;gap:10px;min-width:0}
 .ctagrid .btn .sub{
@@ -456,7 +474,7 @@ h2.stitle{font-family:var(--serif);font-size:clamp(29px,3.8vw,44px);line-height:
 
 /* ============ footer ============ */
 footer.site{border-top:1px solid var(--line-2);margin-top:88px;padding:44px 0 52px;background:rgba(4,7,12,.55)}
-.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:34px}
+.fgrid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:36px;margin-bottom:34px}
 @media(max-width:760px){.fgrid{grid-template-columns:1fr;gap:26px}}
 .fbrand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
 .fbrand img{height:36px;width:auto;border-radius:7px;border:1px solid rgba(201,162,74,.24)}
@@ -1854,6 +1872,27 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 });
 
+</script>
+<script>
+/* In-app browser (Instagram / Facebook WebView) hardening:
+   some WebViews lay the page out wider than the screen, which clips the right
+   edge. Re-assert the viewport and keep text autosizing off. */
+(function(){
+  var d=document.documentElement;
+  d.style.webkitTextSizeAdjust='100%';
+  d.style.textSizeAdjust='100%';
+  function refit(){
+    var meta=document.querySelector('meta[name="viewport"]');
+    if(!meta) return;
+    var sw=Math.round(window.screen.width||0);
+    if(sw && window.innerWidth>sw+1){
+      meta.setAttribute('content','width='+sw+', initial-scale=1, viewport-fit=cover');
+    }
+  }
+  refit();
+  window.addEventListener('resize',refit,{passive:true});
+  window.addEventListener('orientationchange',function(){setTimeout(refit,250)});
+})();
 </script>
 </body>
 </html>
